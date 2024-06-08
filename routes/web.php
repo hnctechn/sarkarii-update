@@ -2,9 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Client as Client;
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::middleware('guest')->group(function () {
+    // Route::get('/', function () { return view('welcome'); });
+    Route::get('/', [Client\HomeController::class, 'index'])->name('home');
+
 });
 
 Route::get('/dashboard', function () {

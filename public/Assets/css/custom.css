@@ -1,0 +1,117 @@
+/* ----------------------------------------------------
+	You can put your custom css code here: 
+-------------------------------------------------------*/
+.links-card a {
+  color: blue;
+}
+
+.links-card .links .link {
+  padding: 15px 0px;
+  border-bottom: 1px solid #b5b5b5;
+}
+
+.links-card .links .link:last-child {
+  border-bottom: 0px;
+}
+
+.links-card .links {
+  padding: 0 17px;
+  /* border: 1px solid #0000004f; */
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.blog__details h2 {
+  font-size: 26px;
+  border-bottom: 0;
+  padding: 15px 0px;
+  background-color: #b7985b;
+  text-align: center;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  color: #fff;
+}
+
+/* .index-page.blog__details h2 {
+  border-bottom: 0;
+  font-size: 22px;
+  padding: 15px 0px;
+  background-color: #b7985b;
+  text-align: center;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  color: #fff;
+} */
+.blog {
+  padding: 0px;
+  border-radius: 6px;
+  border: 1px solid #dbdce0;
+  -webkit-box-shadow: 8px 8px 0 rgba(32, 33, 37, .1);
+  box-shadow: 8px 8px 0 rgba(32, 33, 37, .1);
+
+}
+
+.blog__details {
+  padding: 0px;
+}
+
+.btn-card button {
+  width: 100%;
+  padding: 11px 7px;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+}
+
+.btn-card:hover button {
+  background-color: #000000b3 !important;
+}
+
+.link a {
+  font-size: 16px;
+}
+
+.blog-right-sidebar-top {
+  background: #eeeeeeb8;
+  padding: 20px 20px;
+}
+
+.privacy-policy ul li:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #b7985b;
+  border-radius: 50%;
+  top: 7px;
+  left: 5px;
+}
+
+.privacy-policy li {
+  padding-left: 25px;
+  position: relative;
+}
+
+.accordion-body strong {
+  font-size: medium;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #0c63e4;
+  background-color: #b7985b33;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-item:not(:first-of-type) {
+  border-top: 1px solid rgba(0, 0, 0, .125);;
+}
+
+.accordion-item {
+  border: 1px solid rgba(0, 0, 0, .125);
+  margin-bottom: 12px;
+}
+.footer__menu li.active a {
+  color: #b7985b;
+}
