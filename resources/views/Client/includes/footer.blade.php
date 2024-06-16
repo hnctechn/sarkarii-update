@@ -12,7 +12,7 @@
                             <div class="footer__widget">
                                 <div class="ftr--logo">
                                     <a href="index.php">
-                                        <img src="images/logo/republic.png" alt="logo">
+                                        <img src="{{ URL::asset('Assets/images/logo/republic.png') }}" alt="logo">
                                     </a>
                                 </div>
                                 <p class="ft-dtl">Sarkariresult is a Job Portal for Aspirants of the Government Jobs in
@@ -35,12 +35,11 @@
                                 <h2 class="footer__title">Quick Links</h2>
                                 <div class="footer__inner footer--display">
                                     <ul class="footer__menu">
-                                        <li class="about"><a href="about.php">About Us</a></li>
-                                        <li class="contact"><a href="contact.php">Contact Us</a></li>
-                                        <li class="pp"><a href="privacy-policy.php">Privacy Policy</a></li>
-                                        <li class="disc"><a href="disclaimer.php">Disclaimer</a></li>
+                                        <li class="about"><a href="{{ url('/about') }}">About Us</a></li>
+                                        <li class="contact"><a href="{{ url('/contact') }}">Contact Us</a></li>
+                                        <li class="pp"><a href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
+                                        <li class="disc"><a href="{{ url('/disclaimer') }}">Disclaimer</a></li>
                                     </ul>
-                                    
                                 </div>
                             </div>
                         </div>

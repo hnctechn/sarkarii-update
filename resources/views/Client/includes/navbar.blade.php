@@ -33,15 +33,13 @@
                             <div class="mainmenu-content">
                                 <nav class="mainmenu__nav">
                                     <ul class="main__menu">
-                                        <li class="index active"><a href="index.php">Home</a></li>
-                                        <li class="latest-jobs"><a href="latest-jobs.php">Latest Jobs</a></li>
-                                        <li class="results"><a href="results.php">Results</a></li>
-                                        <li class="admit-card"><a href="admit-card.php">Admit Card</a></li>
-                                        <li class="answer-key"><a href="answer-key.php">Answer Key</a></li>
-                                        <li class="syllabus"><a href="syllabus.php">Syllabus</a></li>
-                                        <li class="contact"><a href="contact.php">Contact Us</a></li>
-
-
+                                        <li class="index active"><a href="{{ url('/') }}">Home</a></li>
+                                        <li class="latest-jobs"><a href="{{ url('/latest-job') }}">Latest Jobs</a></li>
+                                        <li class="results"><a href="{{ url('/result') }}">Results</a></li>
+                                        <li class="admit-card"><a href="{{ url('/admit-card') }}">Admit Card</a></li>
+                                        <li class="answer-key"><a href="{{ url('/answer-key') }}">Answer Key</a></li>
+                                        <li class="syllabus"><a href="{{ url('/syllabus') }}">Syllabus</a></li>
+                                        <li class="contact"><a href="{{ url('/contact') }}">Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>

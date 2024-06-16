@@ -9,6 +9,6 @@
 <link rel="stylesheet" href="{{ URL::asset('Assets/css/core.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('Assets/css/shortcode/shortcodes.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('Assets/css/responsive.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('Assets/style.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('Assets/css/style.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('Assets/css/custom.css') }}">
 @yield('style')

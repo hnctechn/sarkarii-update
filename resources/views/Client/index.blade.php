@@ -1,6 +1,6 @@
 @section('meta_title') Sarkari Result | SarkariResult, Sarkari Job @endsection
 @extends('Client.Layout.layout')
-@section('content')
+@section('style')
 <style>
     .border {
         padding: 8px 0 6px;
@@ -64,9 +64,9 @@
         -ms-animation: blink .7s alternate infinite;
     }
 </style>
+@endsection
 
-<!-- End Header Style -->
-<!-- Start Slider Area -->
+@section('content')
 <div class="htc__slider__area">
     <div class="htc__sliders htc__sliders_activation  htc__sliders__navstyle--one">
         <!-- Start slide -->
@@ -234,10 +234,6 @@
         </div>
 </div>
 </section>
-<!-- Start cards Area -->
-
-
-<!-- Start Our Service Area -->
 <section class="htc__service pt-90 bg-white">
     <div class="container">
         <!-- Start Section Title -->
@@ -316,9 +312,6 @@
         <!-- End Service Area -->
     </div>
 </section>
-<!-- End Our Service Area -->
-
-<!-- Start Running Project Area -->
 <section class="running__project pt-90 bg-white">
     <div class="container">
         <!-- Start Section Title -->
@@ -389,9 +382,6 @@
         <!-- End Project -->
     </div>
 </section>
-<!-- End Running Project Area -->
-
-<!-- Start Counter up Area -->
 <section class="htc__counterup__area pt-90">
     <div class="container">
         <div class="counterup__container bg-9">
@@ -462,9 +452,6 @@
         </div>
     </div>
 </section>
-<!-- end Counter up Area -->
-
-<!-- Start recent Event Area -->
 <section class="recent__event__area ptb-90 bg-white">
     <div class="container">
         <!-- Start Section Title -->
@@ -536,9 +523,4 @@
     </div>
     </div>
 </section>
-<!-- End recent Event Area -->
-
-<!-- Start Footer Area -->
-
 @endsection
-{{-- <?php include "includes/footer.php" ?> --}}
