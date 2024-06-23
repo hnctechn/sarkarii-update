@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* Password View */
+.pass-show{
+    position: absolute;
+    top: 4px;
+    font-size: 16px;
+    right: 15px;
+    cursor: pointer;
+}
+.input-box{
+    position: relative;
+}
+tbody td
+{
+    vertical-align:middle;
+}
+.scrollable-cell {
+    max-height: 100px;
+    overflow: auto;
+    white-space: pre-line;
+}
+
+
+.change-status, .unavailable-stock-change-status {
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.change-status .tgle-on, .unavailable-stock-change-status .tgle-on {
+    color: green;
+}
+
+.change-status .tgle-off, .unavailable-stock-change-status .tgle-off {
+    color: red;
+}
+
+#submit-btn:disabled {
+    cursor: not-allowed;
+}

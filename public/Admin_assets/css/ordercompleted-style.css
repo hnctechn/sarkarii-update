@@ -1,0 +1,210 @@
+
+    .poppins-bold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    body {
+        font-family: poppins !important;
+        font-weight: 900;
+    }
+
+    .order-complete-text {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #2B992F;
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .card-body {
+        width: 347px;
+        margin: 20px 0;
+    }
+
+    .card-main {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-id {
+        border: 1px solid #EFF4F2;
+        padding: 0 40px;
+        border-radius: 9px;
+        margin-bottom: 30px;
+    }
+
+    .order-id span {
+        font-family: Poppins;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 17px;
+        letter-spacing: 0.09495798498392105px;
+        text-align: left;
+        color: #2B992F;
+    }
+
+    .order-id h2 {
+        font-family: Poppins;
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 17px;
+        letter-spacing: 0.09495798498392105px;
+        text-align: left;
+        color: #404040;
+        margin-bottom: 0;
+    }
+
+    .order-id p {
+        font-family: Poppins;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #5B5B5B;
+    }
+    .visit-text{
+        color: #ff8702;
+        font-weight: 600;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .time-left {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFF5EA 61.46%);
+        border: 0.6px solid #FF8702;
+        border-radius: 9px;
+        padding: 0px 96px;
+    }
+
+    .time-left p {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FF8702;
+
+    }
+
+    .time-left h5 {
+        margin-bottom: 0;
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    .order-status {
+        margin: 30px 0;
+    }
+
+    .order-status h5 {
+        border: 0.48px solid #2B992F;
+        border-radius: 7.84px;
+        background-color: #E8FFE4;
+        padding: 7px 11px;
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
+
+    .order-status span {
+        color: #2B992F;
+    }
+
+    .order-description p {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #404040;
+    }
+
+    .price-and-btn {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .price-and-btn h4 {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: right;
+        color: #2B992F;
+    }
+
+    .price-and-btn button {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #FF8702;
+        border: 0.46px solid #FFC88B;
+        background: #FFF5EA;
+        border-radius: 10px;
+        padding: 7px 14px;
+        cursor: pointer;
+    }
+
+    .price-and-btn button:hover {
+        background: #f8e6d3;
+    }
+
+    .pick-up-btn button {
+        background-color: #FF8702;
+        border-radius: 9px;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFFFFF;
+        padding: 9px 71px;
+    }
+    .pick-up-btn button:hover {
+        background-color:#ff8702bd;
+    }
+    /* Responsive start */
+
+    @media only screen and (max-width: 425px) {
+        /* .order-complete-text {
+            font-size: 60px !important;
+        }
+        .card-body {
+            width: 443px;
+            margin: 20px 0;
+        } */
+    }

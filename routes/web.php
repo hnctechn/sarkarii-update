@@ -3,10 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Client as Client;
-
+use App\Http\Controllers\Admin as Admin;
 
 Route::middleware('guest')->group(function () {
-    // Route::get('/', function () { return view('welcome'); });
     Route::get('/', [Client\HomeController::class, 'index'])->name('home');
     Route::view('/latest-job', 'Client/latest-job');
     Route::view('/result', 'Client/result');
@@ -19,14 +18,17 @@ Route::middleware('guest')->group(function () {
     Route::view('/disclaimer', 'Client/disclaimer');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', function () {
         return view('Admin.dashboard');
     })->name('dashboard');
+
+    Route::controller(Admin\CmsController::class)->group(function () {
+        Route::get('cms', 'index');
+        Route::post('cms/store', 'store')->name('cms.store');
+        Route::get('cms/get-page-content', 'get_page_content');
+    });
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
