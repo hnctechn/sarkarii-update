@@ -57,5 +57,51 @@
             height: 120,
         });
     }
+
+    function validation(){
+        $("#add-cms-form").validate({
+            ignore: ".note-editor *",
+            debug: false,
+            rules: {
+                page_name: {
+                    required: true,
+                },
+            },
+            errorElement: "span",
+            errorPlacement: function(error, element) {
+                error.addClass("text-danger");
+                error.insertAfter(element);
+            },
+            onkeyup: function(element) {
+                $(element).valid();
+            },
+            onfocusout: function(element) {
+                $(element).valid();
+            },
+        });
+    }
+
+    function getPageContent(){
+        $(document).on("change", "#page_name", function(){
+            $.ajax({
+                type: "get",
+                url: "{{ url('/admin/cms/get-page-content') }}",
+                data: { 
+                    page_name: $(this).val()
+                },
+                success: function (response) {
+                    if(response.status == "true"){
+                        $("#id").val(response.cms.id);
+                        $("#page_content").summernote('code', response.cms.page_content);
+                        $("#submit-btn").html('Update')
+                    } else {
+                        $("#id").val("");
+                        $("#page_content").summernote('code', '');
+                        $("#submit-btn").html('Submit')
+                    } 
+                }
+            });
+        })
+    }
 </script>
 @endsection
