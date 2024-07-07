@@ -71,7 +71,7 @@
 <script src="{{ URL::asset('Admin_assets/libs/toastr/build/toastr.min.js') }}"></script>
 
 <!-- Common Delete And Status Change Js -->
-{{-- <script src="{{ URL::asset('admin_panel/Common/common.js') }}"></script> --}}
+<script src="{{ URL::asset('Admin_assets/js/common.js') }}"></script>
 
 <!-- Validation Js -->
 <script src="{{ URL::asset('Admin_assets/libs/validation/validate.min.js') }}"></script>
@@ -82,7 +82,7 @@
 
 <!-- Base Url -->
 <script>
-    var base_url = $("#base_url").val();
+    var base_url = "{{ url('/') }}";
 </script>
 
 

@@ -28,6 +28,20 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
         Route::post('cms/store', 'store')->name('cms.store');
         Route::get('cms/get-page-content', 'get_page_content');
     });
+    
+    Route::controller(Admin\LatestJobController::class)->group(function () {
+        Route::get('latest-job', 'index');
+        Route::get('latest-job/create', 'create');
+        Route::post('latest-job/store', 'store')->name('latest_job.store');
+        Route::get('latest-job/data-table', 'data_table');
+        Route::get('latest-job/edit/{id}', 'edit');
+    });
+    
+    Route::controller(Admin\BaseController::class)->group(function () {
+        Route::post('change-status', 'change_status');
+    });
+
+
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -107,6 +107,12 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="latest-job">
+                        <a href="{{ url('/admin/latest-job') }}">
+                            <i class="mdi mdi-newspaper-variant"></i>
+                            <span> Latest Job </span>
+                        </a>
+                    </li>
     
                     
                     <li class="system-user">
