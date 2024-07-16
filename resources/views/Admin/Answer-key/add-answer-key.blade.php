@@ -1,4 +1,4 @@
-@section('meta_title') {{ !empty($admit_card) ? 'Edit' : 'Add' }} Admit Card | SarkariUpdate, Sarkari Job @endsection
+@section('meta_title') {{ !empty($answer_key) ? 'Edit' : 'Add' }} Answer Key | SarkariUpdate, Sarkari Job @endsection
 @extends('Admin.Layout.layout')
 
 @section('content')
@@ -8,33 +8,33 @@
             <div class="row">
                 <div class="col-12">
                     <div class="mb-2 justify-content-between d-flex align-items-center">
-                        <h4 class="header-title ">{{ !empty($admit_card) ? 'Edit' : 'Add' }} Admit Card</h4>
+                        <h4 class="header-title ">{{ !empty($answer_key) ? 'Edit' : 'Add' }} Answer Key</h4>
                         <a href="{{ url()->previous() }}" class="btn btn-secondary waves-effect waves-light add-btn"><span class="btn-label"> <i class="fas fa-long-arrow-alt-left"></i></span>Back</a>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('admit_card.store') }}" method="post" enctype="multipart/form-data" id="add-admit-card-form">
+                            <form action="{{ route('answer_key.store') }}" method="post" enctype="multipart/form-data" id="add-answer-key-form">
                                 @csrf
-                                <input type="hidden" id="id" name="id" value="{{ !empty($admit_card->id) ? $admit_card->id : '' }}">
+                                <input type="hidden" id="id" name="id" value="{{ !empty($answer_key->id) ? $answer_key->id : '' }}">
                                 <div class="row">
                                     <div class="col-12 mb-3">
-                                        <label for="title" class="form-label"> Admit Card Title <b class="text-danger">*</b> </label>
-                                        <input type="text" class="form-control" id="title" name="title" value="{{ !empty($admit_card->title) ? $admit_card->title : old('title') }}">
+                                        <label for="title" class="form-label"> Answer Key Title <b class="text-danger">*</b> </label>
+                                        <input type="text" class="form-control" id="title" name="title" value="{{ !empty($answer_key->title) ? $answer_key->title : old('title') }}">
                                         @if($errors->has('title'))
                                             <span class="text-danger backend-error"> {{$errors->first('title')}} </span>
                                         @endif
                                     </div>
                                     <div class="mb-2 col-12">
-                                        <label for="description" class="form-label">Admit Card Description <b class="text-danger">*</b> </label>
-                                        <textarea class="form-control" id="description" name="description" rows="5">{{ !empty($admit_card->description) ? $admit_card->description : old('description') }}</textarea>
+                                        <label for="description" class="form-label">Answer Key Description <b class="text-danger">*</b> </label>
+                                        <textarea class="form-control" id="description" name="description" rows="5">{{ !empty($answer_key->description) ? $answer_key->description : old('description') }}</textarea>
                                         @if($errors->has('description'))
                                             <span class="text-danger backend-error"> {{$errors->first('description')}} </span>
                                         @endif
                                         <span class="frontend-error"></span>
                                     </div>
                                 </div>
-                                <button class="btn btn-success" type="submit" id="submit-btn"> {{ !empty($admit_card) ? 'Update' : 'Submit' }} </button>
-                                @if(empty($admit_card)) <button class="btn btn-danger" type="reset"> Cancel </button> @endif
+                                <button class="btn btn-success" type="submit" id="submit-btn"> {{ !empty($answer_key) ? 'Update' : 'Submit' }} </button>
+                                @if(empty($answer_key)) <button class="btn btn-danger" type="reset"> Cancel </button> @endif
                             </form>
                         </div>
                     </div>
@@ -47,8 +47,8 @@
 
 @section('script')
 <script>
-    $(".admit-card").addClass("menuitem-active");
-    $(".admit-card a").addClass("active");
+    $(".answer-key").addClass("menuitem-active");
+    $(".answer-key a").addClass("active");
 </script>
 
 <script>
@@ -66,7 +66,7 @@
     }
 
     function Validation(){
-        $("#add-admit-card-form").validate({
+        $("#add-answer-key-form").validate({
             ignore: ".note-editor *",
             debug: false,
             rules: {
