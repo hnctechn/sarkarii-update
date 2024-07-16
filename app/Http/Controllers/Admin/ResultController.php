@@ -74,6 +74,6 @@ class ResultController extends Controller
         if(empty($result)){
             return redirect('admin/404');
         }
-        return view('Admin.results.add-result', compact('result'));
+        return view('Admin.Results.add-result', compact('result'));
     }
 }
