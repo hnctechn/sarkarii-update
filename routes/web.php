@@ -37,11 +37,41 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
         Route::get('latest-job/edit/{id}', 'edit');
     });
     
+    Route::controller(Admin\ResultController::class)->group(function () {
+        Route::get('result', 'index');
+        Route::get('result/create', 'create');
+        Route::post('result/store', 'store')->name('result.store');
+        Route::get('result/data-table', 'data_table');
+        Route::get('result/edit/{id}', 'edit');
+    });
+    
+    Route::controller(Admin\AdmitCardController::class)->group(function () {
+        Route::get('admit-card', 'index');
+        Route::get('admit-card/create', 'create');
+        Route::post('admit-card/store', 'store')->name('admit_card.store');
+        Route::get('admit-card/data-table', 'data_table');
+        Route::get('admit-card/edit/{id}', 'edit');
+    });
+    
+    Route::controller(Admin\AnswerKeyController::class)->group(function () {
+        Route::get('answer-key', 'index');
+        Route::get('answer-key/create', 'create');
+        Route::post('answer-key/store', 'store')->name('answer_key.store');
+        Route::get('answer-key/data-table', 'data_table');
+        Route::get('answer-key/edit/{id}', 'edit');
+    });
+    
+    Route::controller(Admin\SyllabusController::class)->group(function () {
+        Route::get('syllabus', 'index');
+        Route::get('syllabus/create', 'create');
+        Route::post('syllabus/store', 'store')->name('syllabus.store');
+        Route::get('syllabus/data-table', 'data_table');
+        Route::get('syllabus/edit/{id}', 'edit');
+    });
+    
     Route::controller(Admin\BaseController::class)->group(function () {
         Route::post('change-status', 'change_status');
     });
-
-
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

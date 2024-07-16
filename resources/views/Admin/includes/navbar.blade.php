@@ -113,6 +113,30 @@
                             <span> Latest Job </span>
                         </a>
                     </li>
+                    <li class="result">
+                        <a href="{{ url('/admin/result') }}">
+                            <i class="mdi mdi-newspaper-variant"></i>
+                            <span> Result </span>
+                        </a>
+                    </li>
+                    <li class="admit-card">
+                        <a href="{{ url('/admin/admit-card') }}">
+                            <i class="mdi mdi-newspaper-variant"></i>
+                            <span> Admit Card </span>
+                        </a>
+                    </li>
+                    <li class="answer-key">
+                        <a href="{{ url('/admin/answer-key') }}">
+                            <i class="mdi mdi-newspaper-variant"></i>
+                            <span> Answer Key </span>
+                        </a>
+                    </li>
+                    <li class="syllabus">
+                        <a href="{{ url('/admin/syllabus') }}">
+                            <i class="mdi mdi-newspaper-variant"></i>
+                            <span> Syllabus </span>
+                        </a>
+                    </li>
     
                     
                     <li class="system-user">

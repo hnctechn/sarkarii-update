@@ -1,4 +1,4 @@
-@section('meta_title') {{ !empty($job) ? 'Edit' : 'Add' }} Job | SarkariUpdate, Sarkari Job @endsection
+@section('meta_title') {{ !empty($result) ? 'Edit' : 'Add' }} Result | SarkariUpdate, Sarkari Job @endsection
 @extends('Admin.Layout.layout')
 
 @section('content')
@@ -8,33 +8,33 @@
             <div class="row">
                 <div class="col-12">
                     <div class="mb-2 justify-content-between d-flex align-items-center">
-                        <h4 class="header-title ">{{ !empty($job) ? 'Edit' : 'Add' }} Job</h4>
+                        <h4 class="header-title ">{{ !empty($result) ? 'Edit' : 'Add' }} Result</h4>
                         <a href="{{ url()->previous() }}" class="btn btn-secondary waves-effect waves-light add-btn"><span class="btn-label"> <i class="fas fa-long-arrow-alt-left"></i></span>Back</a>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('latest_job.store') }}" method="post" enctype="multipart/form-data" id="add-latest-job-form">
+                            <form action="{{ route('result.store') }}" method="post" enctype="multipart/form-data" id="add-result-form">
                                 @csrf
-                                <input type="hidden" id="id" name="id" value="{{ !empty($job->id) ? $job->id : '' }}">
+                                <input type="hidden" id="id" name="id" value="{{ !empty($result->id) ? $result->id : '' }}">
                                 <div class="row">
                                     <div class="col-12 mb-3">
-                                        <label for="title" class="form-label"> Job Title <b class="text-danger">*</b> </label>
-                                        <input type="text" class="form-control" id="title" name="title" value="{{ !empty($job->title) ? $job->title : old('title') }}">
+                                        <label for="title" class="form-label"> Result Title <b class="text-danger">*</b> </label>
+                                        <input type="text" class="form-control" id="title" name="title" value="{{ !empty($result->title) ? $result->title : old('title') }}">
                                         @if($errors->has('title'))
                                             <span class="text-danger backend-error"> {{$errors->first('title')}} </span>
                                         @endif
                                     </div>
                                     <div class="mb-2 col-12">
-                                        <label for="description" class="form-label">Job Description <b class="text-danger">*</b> </label>
-                                        <textarea class="form-control" id="description" name="description" rows="5">{{ !empty($job->description) ? $job->description : old('description') }}</textarea>
+                                        <label for="description" class="form-label">Result Description <b class="text-danger">*</b> </label>
+                                        <textarea class="form-control" id="description" name="description" rows="5">{{ !empty($result->description) ? $result->description : old('description') }}</textarea>
                                         @if($errors->has('description'))
                                             <span class="text-danger backend-error"> {{$errors->first('description')}} </span>
                                         @endif
                                         <span class="frontend-error"></span>
                                     </div>
                                 </div>
-                                <button class="btn btn-success" type="submit" id="submit-btn"> {{ !empty($job) ? 'Update' : 'Submit' }} </button>
-                                @if(empty($job)) <button class="btn btn-danger" type="reset"> Cancel </button> @endif
+                                <button class="btn btn-success" type="submit" id="submit-btn"> {{ !empty($result) ? 'Update' : 'Submit' }} </button>
+                                @if(empty($result)) <button class="btn btn-danger" type="reset"> Cancel </button> @endif
                             </form>
                         </div>
                     </div>
@@ -47,8 +47,8 @@
 
 @section('script')
 <script>
-    $(".latest-job").addClass("menuitem-active");
-    $(".latest-job a").addClass("active");
+    $(".result").addClass("menuitem-active");
+    $(".result a").addClass("active");
 </script>
 
 <script>
@@ -66,7 +66,7 @@
     }
 
     function Validation(){
-        $("#add-latest-job-form").validate({
+        $("#add-result-form").validate({
             ignore: ".note-editor *",
             debug: false,
             rules: {
