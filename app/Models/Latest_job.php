@@ -10,6 +10,7 @@ class Latest_job extends Model
     use HasFactory;
     protected $fillable = [
         'title',
+        'slug_url',
         'description',
 
         'created_ip_address',

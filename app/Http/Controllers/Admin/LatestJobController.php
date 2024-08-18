@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Latest_job;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
+use Str;
 
 class LatestJobController extends Controller
 {
@@ -25,6 +26,7 @@ class LatestJobController extends Controller
         ]);
 
         $input['title'] = $request->title;
+        $input['slug_url'] = Str::slug($request->title , "-");
         $input['description'] = $request->description;
 
         if(!empty($request->id)){

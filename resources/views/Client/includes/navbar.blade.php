@@ -78,10 +78,10 @@
                                                 <li>
                                                     <h4 class="megamenu__subtitle"><span>Language</span></h4>
                                                 </li>
-                                                <li><a href="#"><img src="images/ser-img/1.png" alt="flag images"><span>English</span></a></li>
-                                                <li><a href="#"><img src="images/ser-img/2.png" alt="flag images"><span>German</span></a></li>
-                                                <li><a href="#"><img src="images/ser-img/3.png" alt="flag images"><span>Spanish</span></a></li>
-                                                <li><a href="#"><img src="images/ser-img/4.png" alt="flag images"><span>Russian</span></a></li>
+                                                <li><a href="#"><img src="{{ URL::asset('Assets/images/ser-img/1.png') }}" alt="flag images"><span>English</span></a></li>
+                                                <li><a href="#"><img src="{{ URL::asset('Assets/images/ser-img/2.png') }}" alt="flag images"><span>German</span></a></li>
+                                                <li><a href="#"><img src="{{ URL::asset('Assets/images/ser-img/3.png') }}" alt="flag images"><span>Spanish</span></a></li>
+                                                <li><a href="#"><img src="{{ URL::asset('Assets/images/ser-img/4.png') }}" alt="flag images"><span>Russian</span></a></li>
                                             </ul>
                                             <!-- End Single Menu -->
                                             <!-- Start Single Menu -->
@@ -128,7 +128,7 @@
     <!-- Mobile-menu-area start -->
     <div class="mobile-menu-area d-block d-md-none">
         <div class="fluid-container mobile-menu-container">
-            <div class="mobile-logo"><a href="index.php"><img src="images/logo/republic.png" alt="Mobile logo"></a></div>
+            <div class="mobile-logo"><a href="index.php"><img src="{{ URL::asset('Assets/images/logo/republic.png') }}" alt="Mobile logo"></a></div>
             <div class="mobile-menu clearfix">
                 <nav id="mobile_dropdown">
                     <ul>

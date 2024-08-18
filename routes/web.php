@@ -7,11 +7,33 @@ use App\Http\Controllers\Admin as Admin;
 
 Route::middleware('guest')->group(function () {
     Route::get('/', [Client\HomeController::class, 'index'])->name('home');
-    Route::view('/latest-job', 'Client/latest-job');
-    Route::view('/result', 'Client/result');
-    Route::view('/admit-card', 'Client/admit-card');
-    Route::view('/answer-key', 'Client/answer-key');
-    Route::view('/syllabus', 'Client/syllabus');
+
+    Route::controller(Client\ClientLatestJobController::class)->group(function () {
+        Route::get('/latest-job', 'index');
+        Route::get('/latest-job/{slug}', 'show');
+    });
+    Route::controller(Client\ClientResultController::class)->group(function () {
+        Route::get('/result', 'index');
+        Route::get('/result/{slug}', 'show');
+    });
+    Route::controller(Client\ClientAdmitCardController::class)->group(function () {
+        Route::get('/admit-card', 'index');
+        Route::get('/admit-card/{slug}', 'show');
+    });
+    Route::controller(Client\ClientAnswerKeyController::class)->group(function () {
+        Route::get('/answer-key', 'index');
+        Route::get('/answer-key/{slug}', 'show');
+    });
+    Route::controller(Client\ClientSyllabusController::class)->group(function () {
+        Route::get('/syllabus', 'index');
+        Route::get('/syllabus/{slug}', 'show');
+    });
+
+    // Route::view('/latest-job', 'Client/latest-job');
+    // Route::view('/result', 'Client/result');
+    // Route::view('/admit-card', 'Client/admit-card');
+    // Route::view('/answer-key', 'Client/answer-key');
+    // Route::view('/syllabus', 'Client/syllabus');
     Route::view('/contact', 'Client/contact');
     Route::view('/about', 'Client/about');
     Route::view('/privacy-policy', 'Client/privacy-policy');
@@ -76,6 +98,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::fallback(function(){ 
+        abort(404);  
+    });
 });
 
 require __DIR__.'/auth.php';

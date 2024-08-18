@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('syllabi', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug_url');
             $table->longText('description');
 
             $table->enum('status',['active','delete','inactive'])->default('active');

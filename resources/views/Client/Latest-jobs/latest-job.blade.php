@@ -19,7 +19,7 @@
                     <div class="bradcamb-content text-center text-white">
                         <h1>Latest Jobs</h1>
                         <ul>
-                            <li><a href="index.php">Home <span>//</span></a></li>
+                            <li><a href="{{ url('/') }}"> Home <span>//</span></a></li>
                             <li>Latest Jobs</li>
                         </ul>
                     </div>
@@ -40,46 +40,13 @@
                                             <h2>Latest Jobs</h2>
                                         </div>
                                         <div class="links">
+                                            @if(!empty($latest_jobs) && $latest_jobs->count() > 0)
+                                            @foreach($latest_jobs as $latest_job)
                                             <div class="link">
-
-                                                <a href="">Patna High Court Translator Online Form 2024
-                                                </a>
+                                                <a href="{{ url('latest-job/'.$latest_job->slug_url) }}">{{ !empty($latest_job->title) ? $latest_job->title : '' }}</a>
                                             </div>
-                                            <div class="link">
-
-                                                <a href="">BSF Water Wing Group B, C Online Form 2024 – Start
-                                                </a>
-                                            </div>
-                                            <div class="link">
-
-                                                <a href="">SSC MTS, Havaldar Recruitment 2024
-                                                </a>
-                                            </div>
-                                            <div class="link">
-
-                                                <a href="">Railway RRB Technician Re Upload Photo / Signature 2024
-                                                </a>
-                                            </div>
-                                            <div class="link">
-
-                                                <a href="">Railway RRB ALP Re Upload Photo / Signature 2024
-
-                                                </a>
-                                            </div>
-                                            <div class="link">
-
-                                                <a href="">
-                                                    Indian Air Force AFCAT 2/2024 Online Form
-                                                </a>
-                                            </div>
-                                            <div class="link">
-
-                                                <a href="">
-
-                                                    Railway ICF Apprentice Online Form 2024 (1010 Posts)
-                                                </a>
-                                            </div>
-
+                                            @endforeach
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

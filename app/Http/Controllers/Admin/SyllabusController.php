@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Syllabus;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
+use Str;
 
 class SyllabusController extends Controller
 {
@@ -25,6 +26,7 @@ class SyllabusController extends Controller
         ]);
 
         $input['title'] = $request->title;
+        $input['slug_url'] = Str::slug($request->title , "-");
         $input['description'] = $request->description;
 
         if(!empty($request->id)){

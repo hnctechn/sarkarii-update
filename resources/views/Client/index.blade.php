@@ -106,10 +106,10 @@
                 <div class="col-lg-12 col-12">
                     <div class="blog__wrap">
                         <div class="row xs-mt-20">
-
                             
                             <!-- Start Single BLog -->
-                            <div class="col-lg-4 col-md-6 col-12">
+                            
+                            {{-- <div class="col-lg-4 col-md-6 col-12">
                                 <div class="blog bg-cat-2 mb-30 blog-res">
                                     <div class="blog__details index-page links-card">
                                         <div class="card-heading">
@@ -142,7 +142,33 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div> --}}
+                           
+
+                            @if(!empty($latest_jobs) && $latest_jobs->count() > 0)
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="blog bg-cat-2 mb-30 blog-res">
+                                    <div class="blog__details links-card">
+                                        <div class="card-heading">
+                                            <h2>Latest Job</h2>
+                                        </div>
+                                        <div class="links">
+                                            @foreach($latest_jobs as $latest_job)
+                                            <div class="link">
+                                                <a href="{{ url('latest-job/'.$latest_job->slug_url) }}">{{ !empty($latest_job->title) ? $latest_job->title : '' }}</a>
+                                            </div>
+                                            @endforeach
+                                            
+                                            <div class="btn-card">
+                                                <button href="{{ url('latest-job') }}" class="my-3 text-lg font-semibold bg-black text-white rounded-lg block shadow-xl hover:bg-gray-700">View More</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            @endif
+                            
+                            @if(!empty($admit_cards) && $admit_cards->count() > 0)
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="blog bg-cat-2 mb-30 blog-res">
                                     <div class="blog__details links-card">
@@ -150,44 +176,91 @@
                                             <h2>Admit Card</h2>
                                         </div>
                                         <div class="links">
+                                            @foreach($admit_cards as $admit_card)
                                             <div class="link">
-
-                                                <a href="">Bihar ITI Admit Card 2024
-                                                </a>
+                                                <a href="{{ url('admit-card/'.$admit_card->slug_url) }}">{{ !empty($admit_card->title) ? $latest_job->title : '' }}</a>
                                             </div>
-                                            <div class="link">
+                                            @endforeach
 
-                                                <a href="">SSC Junior Engineer JE Admit Card / Application Status 2024
-                                                </a>
-                                            </div>
-                                            <div class="link">
-
-                                                <a href="">UP Polytechnic JEECUP Admit Card 2024 – Out
-                                                </a>
-                                            </div>
-                                            <div class="link">
-
-                                                <a href="">DSSSB PA, SPA, JJA Tier-2 Admit Card 2024
-                                                </a>
-                                            </div>
-                                            <div class="link">
-
-                                                <a href="">Bihar Vidhan Parishad Reporter Skill Test Exam / Admit Card Date 2024
-                                                </a>
-                                            </div>
                                             <div class="btn-card">
-
-                                                <button class="my-3 text-lg font-semibold 
-                                            bg-black text-white rounded-lg 
-                                             block shadow-xl hover:bg-gray-700">
-                                                    View More
-                                                </button>
+                                                <button href="{{ url('admit-card') }}" class="my-3 text-lg font-semibold bg-black text-white rounded-lg block shadow-xl hover:bg-gray-700">View More</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endif
+                            
+                            @if(!empty($results) && $results->count() > 0)
                             <div class="col-lg-4 col-md-6 col-12">
+                                <div class="blog bg-cat-2 mb-30 blog-res">
+                                    <div class="blog__details links-card">
+                                        <div class="card-heading">
+                                            <h2>Result</h2>
+                                        </div>
+                                        <div class="links">
+                                            @foreach($results as $result)
+                                            <div class="link">
+                                                <a href="{{ url('result/'.$result->slug_url) }}">{{ !empty($result->title) ? $latest_job->title : '' }}</a>
+                                            </div>
+                                            @endforeach
+
+                                            <div class="btn-card">
+                                                <button href="{{ url('result') }}" class="my-3 text-lg font-semibold bg-black text-white rounded-lg block shadow-xl hover:bg-gray-700">View More</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+
+                            @if(!empty($syllabuses) && $syllabuses->count() > 0)
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="blog bg-cat-2 mb-30 blog-res">
+                                    <div class="blog__details links-card">
+                                        <div class="card-heading">
+                                            <h2>Syllabus</h2>
+                                        </div>
+                                        <div class="links">
+                                            @foreach($syllabuses as $syllabus)
+                                            <div class="link">
+                                                <a href="{{ url('syllabus/'.$syllabus->slug_url) }}">{{ !empty($syllabus->title) ? $latest_job->title : '' }}</a>
+                                            </div>
+                                            @endforeach
+
+                                            <div class="btn-card">
+                                                <button href="{{ url('syllabus') }}" class="my-3 text-lg font-semibold bg-black text-white rounded-lg block shadow-xl hover:bg-gray-700">View More</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                            
+                            @if(!empty($answer_keys) && $answer_keys->count() > 0)
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="blog bg-cat-2 mb-30 blog-res">
+                                    <div class="blog__details links-card">
+                                        <div class="card-heading">
+                                            <h2>Answer Key</h2>
+                                        </div>
+                                        <div class="links">
+                                            @foreach($answer_keys as $answer_key)
+                                            <div class="link">
+                                                <a href="{{ url('answer-key/'.$answer_key->slug_url) }}">{{ !empty($answer_key->title) ? $latest_job->title : '' }}</a>
+                                            </div>
+                                            @endforeach
+
+                                            <div class="btn-card">
+                                                <button href="{{ url('answer-key') }}" class="my-3 text-lg font-semibold bg-black text-white rounded-lg block shadow-xl hover:bg-gray-700">View More</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+
+                            {{-- <div class="col-lg-4 col-md-6 col-12">
                                 <div class="blog bg-cat-2 mb-30 blog-res">
                                     <div class="blog__details links-card">
                                         <div class="card-heading">
@@ -225,7 +298,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- End Single BLog -->
                         </div>
                     </div>
